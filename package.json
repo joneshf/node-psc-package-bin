@@ -1,15 +1,18 @@
 {
-  "name": "purescript",
-  "version": "0.11.6",
-  "description": "PureScript wrapper that makes it seamlessly available as a local dependency",
+  "name": "psc-package",
+  "version": "0.2.4-rc1",
+  "description": "psc-package wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
-  "repository": "purescript-contrib/node-purescript-bin",
+  "repository": "joneshf/node-psc-package-bin",
   "author": "Shinnosuke Watanabe <snnskwtnb@gmail.com> (http://github.com/shinnn)",
+  "contributors": [
+    "Hardy Jones <jones3.hardy@gmail.com> (https://joneshf.github.io/)"
+  ],
   "engines": {
     "node": ">=6"
   },
   "bin": {
-    "purs": "bin/purs.js"
+    "psc-package": "bin/psc-package.js"
   },
   "scripts": {
     "postinstall": "node lib/install.js",
@@ -27,7 +30,7 @@
     "build",
     "install",
     "installation",
-    "purs",
+    "psc-package",
     "purescript",
     "haskell",
     "language",
@@ -36,8 +39,7 @@
     "bin",
     "binary",
     "binaries",
-    "wrapper",
-    "purs"
+    "wrapper"
   ],
   "dependencies": {
     "bin-build": "^2.2.0",

@@ -12,7 +12,7 @@ const test = require('tape');
 
 const {bin} = require('./package.json');
 const {SOURCE_URL} = require('./lib');
-const VERSION = '0.11.6';
+const VERSION = '0.2.4';
 const allowDifferentUserFlag = ' --allow-different-user'.repeat(Number(process.platform !== 'win32'));
 
 test('The package entry point', t => {
@@ -21,20 +21,20 @@ test('The package entry point', t => {
   spawn(require('.'), ['--help'])
   .stdout.setEncoding('utf8').pipe(concatStream({encoding: 'string'}, msg => {
     t.ok(
-      msg.startsWith('Usage: purs'),
-      'should expose a path to `purs` binary.'
+      msg.startsWith('Usage: psc-package'),
+      'should expose a path to `psc-package` binary.'
     );
   }));
 });
 
-test('`purs` command', t => {
+test('`psc-package` command', t => {
   t.plan(1);
 
   spawn('node', [join(__dirname, bin[Object.keys(bin)[0]]), '--version'])
   .stdout
   .setEncoding('utf8')
   .pipe(concatStream({encoding: 'string'}, version => {
-    t.strictEqual(version, VERSION + EOL, 'should run `purs` binary.');
+    t.strictEqual(version, VERSION + EOL, 'should run `psc-package` binary.');
   }));
 });
 
@@ -61,7 +61,7 @@ test('Build script', t => {
     fs.readdir(tmpDir, (readErr, filePaths) => {
       t.strictEqual(readErr, null, 'should create a directory.');
 
-      t.ok(filePaths.indexOf('purs') !== -1, 'should compile `purs` binary.');
+      t.ok(filePaths.indexOf('psc-package') !== -1, 'should compile `psc-package` binary.');
     });
   });
 });
