@@ -12,7 +12,7 @@ const test = require('tape');
 
 const {bin} = require('./package.json');
 const {SOURCE_URL} = require('./lib');
-const VERSION = '0.2.4';
+const VERSION = '0.2.5';
 const allowDifferentUserFlag = ' --allow-different-user'.repeat(Number(process.platform !== 'win32'));
 
 test('The package entry point', t => {
