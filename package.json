@@ -1,6 +1,6 @@
 {
   "name": "psc-package",
-  "version": "0.3.1",
+  "version": "0.3.2-pre",
   "description": "psc-package wrapper that makes it seamlessly available as a local dependency",
   "license": "MIT",
   "repository": "joneshf/node-psc-package-bin",
