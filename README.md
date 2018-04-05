@@ -1,6 +1,6 @@
 # [psc-package](https://github.com/purescript/psc-package) wrapper for [Node.js](https://nodejs.org/)
 
-[![NPM version](http://img.shields.io/npm/v/psc-pacakge.svg)](https://www.npmjs.com/package/psc-pacakge)
+[![NPM version](http://img.shields.io/npm/v/psc-package.svg)](https://www.npmjs.com/package/psc-package)
 [![Build Status](http://img.shields.io/travis/joneshf/node-psc-package-bin.svg)](http://travis-ci.org/joneshf/node-psc-package-bin)
 [![Coverage Status](https://img.shields.io/coveralls/joneshf/node-psc-package-bin.svg)](https://coveralls.io/github/joneshf/node-psc-package-bin?branch=master)
 [![dependencies Status](https://david-dm.org/joneshf/node-psc-package-bin/status.svg)](https://david-dm.org/joneshf/node-psc-package-bin)
