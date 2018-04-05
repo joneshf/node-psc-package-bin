@@ -2,25 +2,21 @@ dist: trusty
 git:
   depth: 1
 cache:
-  directories: $HOME/.stack
+  directories:
+    - $HOME/.stack
 language: node_js
-branches:
-  except: /^v\d/
 node_js:
   - node
-  - 6
 before_install:
   - mkdir -p ~/.local/bin
   - export PATH=$HOME/.local/bin:$PATH
   - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
-script:  if [[ `node --version` != v6.* ]];
-  then npm run-script pretest && travis_wait 45 npm run-script coverage;
-  else travis_wait 45 npm test;
-  fi;
-after_script: if [[ `node --version` != v6.* ]];
-  then npm install istanbul-coveralls &&
-  node node_modules/.bin/istanbul-coveralls;
-  fi;
+script:
+  - npm run-script pretest
+  - npm run-script coverage
+after_script:
+  - npm install istanbul-coveralls
+  - node node_modules/.bin/istanbul-coveralls
 deploy:
   provider: npm
   email: jones3.hardy@gmail.com
