@@ -2,22 +2,26 @@ dist: trusty
 git:
   depth: 1
 cache:
-  directories: $HOME/.stack
+  directories:
+    - $HOME/.stack
 language: node_js
-branches:
-  except: /^v\d/
 node_js:
   - node
-  - 6
 before_install:
   - mkdir -p ~/.local/bin
   - export PATH=$HOME/.local/bin:$PATH
   - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
-script:  if [[ `node --version` != v6.* ]];
-  then npm run-script pretest && travis_wait 45 npm run-script coverage;
-  else travis_wait 45 npm test;
-  fi;
-after_script: if [[ `node --version` != v6.* ]];
-  then npm install istanbul-coveralls &&
-  node node_modules/.bin/istanbul-coveralls;
-  fi;
+script:
+  - npm run-script pretest
+  - npm run-script coverage
+after_script:
+  - npm install istanbul-coveralls
+  - node node_modules/.bin/istanbul-coveralls
+deploy:
+  provider: npm
+  email: jones3.hardy@gmail.com
+  api_key:
+    secure: sRjXVw3LRg34EmSf2PCfRLx8dZ4x7YdzzKeB5GHpfJULelEuIYwMGyWSr3pSP2RO2DPOtw15F1KVPbXP28gHuOVACkGL1VaRm5MztDLO9lr0R7im8ZSa8XnVYhUr6FsxRvIj9u0SN9mcwRwxxaytafgvzrRlbuLTe49C23z9FBHDhNulV+QW/RXMSy66esBaIUDkD6md3xB1GAK0amm4WN5y1+0ad5YZx43cdHlxUSSwvaSc44VeQ18SbIoTYz923XG6aWjayqFaRJkxR3nzMjOUNFYXPKyEX4hxC3Yb7aCwt8JFyCWFOOO1eYR1MQTwO9ynZ7tDtGX9JtNd+lVraeg1b5fx1WidZyc3bwt67tsnq9zTzFM/j3D+sCMr3fbOu/x/4n/75+dXSDeZDf15caaPjw4A26ogpV+xx1U8NfoIrpodW3w/1ra+nDJFKBWzozAOsqNdbSLT/Jp6YLTCbCemfnzbPbM8MwoznK7ZdDiyo5/UPC7kxSvhKev3yY0pIqI4d/mzA+v3pou7BNlTtXl9mcHJ0fX+vKgKtmtXAuXrLkKnKlHVqx23wxJpbuUtEXBzWhmvhbP501HKQO0wc0++v66llUDOZAaaaxrVnBiP77SP6/4eZM88tAu+L+1WFTXuE6EVvL3DQALxyIneBgFEFAjvIGL73bohMfFdGUg=
+  on:
+    tags: true
+    repo: joneshf/node-psc-package-bin

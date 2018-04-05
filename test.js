@@ -10,9 +10,8 @@ const concatStream = require('concat-stream');
 const rimraf = require('rimraf');
 const test = require('tape');
 
-const {bin} = require('./package.json');
+const {bin, version} = require('./package.json');
 const {SOURCE_URL} = require('./lib');
-const VERSION = '0.3.2-pre';
 const allowDifferentUserFlag = ' --allow-different-user'.repeat(Number(process.platform !== 'win32'));
 
 test('The package entry point', t => {
@@ -33,8 +32,8 @@ test('`psc-package` command', t => {
   spawn('node', [join(__dirname, bin[Object.keys(bin)[0]]), '--version'])
   .stdout
   .setEncoding('utf8')
-  .pipe(concatStream({encoding: 'string'}, version => {
-    t.strictEqual(version, VERSION + EOL, 'should run `psc-package` binary.');
+  .pipe(concatStream({encoding: 'string'}, v => {
+    t.strictEqual(v, version + EOL, 'should run `psc-package` binary.');
   }));
 });
 
