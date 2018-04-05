@@ -1,10 +1,10 @@
 # [psc-package](https://github.com/purescript/psc-package) wrapper for [Node.js](https://nodejs.org/)
 
 [![NPM version](http://img.shields.io/npm/v/psc-pacakge.svg)](https://www.npmjs.com/package/psc-pacakge)
-[![Build Status](http://img.shields.io/travis/purescript-contrib/node-purescript-bin.svg)](http://travis-ci.org/purescript-contrib/node-purescript-bin)
-[![Coverage Status](https://img.shields.io/coveralls/purescript-contrib/node-purescript-bin.svg)](https://coveralls.io/github/purescript-contrib/node-purescript-bin?branch=master)
-[![dependencies Status](https://david-dm.org/purescript-contrib/node-purescript-bin/status.svg)](https://david-dm.org/purescript-contrib/node-purescript-bin)
-[![devDependencies Status](https://david-dm.org/purescript-contrib/node-purescript-bin/dev-status.svg)](https://david-dm.org/purescript-contrib/node-purescript-bin?type=dev)
+[![Build Status](http://img.shields.io/travis/joneshf/node-psc-package-bin.svg)](http://travis-ci.org/joneshf/node-psc-package-bin)
+[![Coverage Status](https://img.shields.io/coveralls/joneshf/node-psc-package-bin.svg)](https://coveralls.io/github/joneshf/node-psc-package-bin?branch=master)
+[![dependencies Status](https://david-dm.org/joneshf/node-psc-package-bin/status.svg)](https://david-dm.org/joneshf/node-psc-package-bin)
+[![devDependencies Status](https://david-dm.org/joneshf/node-psc-package-bin/dev-status.svg)](https://david-dm.org/joneshf/node-psc-package-bin?type=dev)
 
 [psc-package](https://github.com/purescript/psc-package) binary wrapper that makes it seamlessly available via [npm](https://www.npmjs.com/)
 
