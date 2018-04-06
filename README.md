@@ -36,6 +36,7 @@ psc-package --help
 
 ## License
 
-Copyright (c) 2015 - 2017 [Shinnosuke Watanabe](https://github.com/shinnn)
+Original Copyright (c) 2015 - 2017 [Shinnosuke Watanabe](https://github.com/shinnn)
+Copyright (c) 2017-2018 [Hardy Jones](https://github.com/joneshf)
 
 Licensed under [the MIT License](./LICENSE).
