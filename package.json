@@ -60,6 +60,10 @@
     "tape": "^4.7.0"
   },
   "eslintConfig": {
-    "extends": "@shinnn/node"
+    "extends": "@shinnn/node",
+    "rules": {
+      "linebreak-style": "off",
+      "node/shebang": "off"
+    }
   }
 }
